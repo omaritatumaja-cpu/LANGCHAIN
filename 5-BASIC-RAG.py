@@ -9,7 +9,7 @@ from langchain_community.vectorstores import FAISS
 load_dotenv()
 
 embeddings = OpenAIEmbeddings(
-    model="text-embedding-embeddinggemma-300m",
+    model=os.getenv("LM_STUDIO_EMBEDDING_MODEL"),
     base_url=os.getenv("LM_STUDIO_BASE_URL"),
     api_key=os.getenv("LM_STUDIO_API_KEY"),
     check_embedding_ctx_length=False
